@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sertifikat</title>
+    <style>
+        @page {
+            margin: 0;
+            size: 1950px 1270px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('{{ public_path("hasil.png") }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 1950px;
+            height: 1270px;
+            position: relative;
+        }
+
+        .nama {
+            position: absolute;
+            top: 570px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 72px;
+            font-weight: bold;
+            color: #000000;
+        }
+        .no{
+            position: absolute;
+            top: 400px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .materi {
+            position: absolute;
+            top: 760px;
+            left: 15%;
+            width: 70%;
+            text-align: center;
+            font-size: 30px;
+            color: #2c2c2c;
+        }
+
+        .deskripsi {
+            position: absolute;
+            top: 830px;
+            left: 25%;
+            width: 50%;
+            text-align: center;
+            font-size: 24px;
+            color: #333333;
+        }
+
+        .tanggal {
+            position: absolute;
+            bottom: 280px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 32px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="no">No. SERT - 365{{$random_number}} / WEBINAR / ASNB-24 / 204.5 / 2025</div>
+    <div class="nama">{{ $nama }}</div>
+    <div class="nama">{{ $nama }}</div>
+    <div class="materi">{{ $judul_materi ?? 'Telah Mengikuti e-Learning' }}</div>
+    <div class="deskripsi">Yang diselenggarakan oleh Satuan Polisi Pamong Praja dan Pengembangan Sumber Daya Manusia Kota Surabaya
+pada tanggal {{ \Carbon\Carbon::parse($tanggal)->translatedFormat('d F Y') }} yang meliputi 3 Jam Pelajaran dengan Baik.</div>
+    <div class="tanggal">Surabaya, {{ \Carbon\Carbon::parse($tanggal)->translatedFormat('d F Y') }}</div>
+</body>
+</html>
